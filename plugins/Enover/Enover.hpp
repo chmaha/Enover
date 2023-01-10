@@ -44,7 +44,7 @@ public:
     enum Parameter {
         p_Initial_Delay,
         p_LowFreq_X,
-        p_Low_Decay,
+        p_Bass_Mult,
         p_Mid_Decay,
         p_HF_Damping,
         p_Wet_Dry_Mix,
@@ -76,7 +76,7 @@ public:
     
     float get_LowFreq_X() const noexcept;
     
-    float get_Low_Decay() const noexcept;
+    float get_Bass_Mult() const noexcept;
     
     float get_Mid_Decay() const noexcept;
     
@@ -91,7 +91,7 @@ public:
     
     void set_LowFreq_X(float value) noexcept;
     
-    void set_Low_Decay(float value) noexcept;
+    void set_Bass_Mult(float value) noexcept;
     
     void set_Mid_Decay(float value) noexcept;
     

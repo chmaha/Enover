@@ -234,7 +234,7 @@ class mydsp : public dsp {
 		m->declare("author", "Julius O. Smith III, Christopher Arndt, chmaha");
 		m->declare("basics.lib/name", "Faust Basic Element Library");
 		m->declare("basics.lib/version", "0.9");
-		m->declare("compile_options", "-a /tmp/tmp01_zqz2c.cpp -lang cpp -es 1 -mcd 16 -single -ftz 0");
+		m->declare("compile_options", "-a /tmp/tmpbo59c83r.cpp -lang cpp -es 1 -mcd 16 -single -ftz 0");
 		m->declare("copyright", "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>");
 		m->declare("delays.lib/name", "Faust Delay Library");
 		m->declare("delays.lib/version", "0.1");
@@ -357,7 +357,7 @@ class mydsp : public dsp {
 		fVslider0 = FAUSTFLOAT(2.0f);
 		fVslider1 = FAUSTFLOAT(3e+03f);
 		fVslider2 = FAUSTFLOAT(2.5e+02f);
-		fVslider3 = FAUSTFLOAT(3.0f);
+		fVslider3 = FAUSTFLOAT(1.5f);
 		fVslider4 = FAUSTFLOAT(4e+01f);
 		fVslider5 = FAUSTFLOAT(0.0f);
 		fVslider6 = FAUSTFLOAT(0.0f);
@@ -576,9 +576,9 @@ class mydsp : public dsp {
 		ui_interface->declare(&fVslider3, "2", "");
 		ui_interface->declare(&fVslider3, "scale", "log");
 		ui_interface->declare(&fVslider3, "style", "knob");
-		ui_interface->declare(&fVslider3, "tooltip", "T60 = time (in seconds) to decay 60dB in low-frequency band");
-		ui_interface->declare(&fVslider3, "unit", "s");
-		ui_interface->addVerticalSlider("Low Decay", &fVslider3, FAUSTFLOAT(3.0f), FAUSTFLOAT(1.0f), FAUSTFLOAT(8.0f), FAUSTFLOAT(0.1f));
+		ui_interface->declare(&fVslider3, "tooltip", "Bass Mult = Low Decay is equal to Mid Decay x Low Mult");
+		ui_interface->declare(&fVslider3, "unit", "x");
+		ui_interface->addVerticalSlider("Bass Mult", &fVslider3, FAUSTFLOAT(1.5f), FAUSTFLOAT(0.5f), FAUSTFLOAT(2.0f), FAUSTFLOAT(0.1f));
 		ui_interface->declare(&fVslider0, "3", "");
 		ui_interface->declare(&fVslider0, "scale", "log");
 		ui_interface->declare(&fVslider0, "style", "knob");
@@ -624,7 +624,7 @@ class mydsp : public dsp {
 		float fSlow9 = 1.0f / std::tan(fConst4 * float(fVslider2));
 		float fSlow10 = 1.0f - fSlow9;
 		float fSlow11 = 1.0f / (fSlow9 + 1.0f);
-		float fSlow12 = float(fVslider3);
+		float fSlow12 = fSlow0 * float(fVslider3);
 		float fSlow13 = std::exp(fConst2 / fSlow12) / fSlow1 + -1.0f;
 		float fSlow14 = fSlow1 * (fSlow6 + (1.0f - fSlow7));
 		int iSlow15 = int(std::min<float>(8192.0f, std::max<float>(0.0f, fConst7 * float(fVslider4))));
@@ -922,7 +922,7 @@ const char *Enover::parameter_label(unsigned index) noexcept
         return "LowFreq X";
     
     case 2:
-        return "Low Decay";
+        return "Bass Mult";
     
     case 3:
         return "Mid Decay";
@@ -982,7 +982,7 @@ const char *Enover::parameter_symbol(unsigned index) noexcept
         return "LowFreq_X";
     
     case 2:
-        return "Low_Decay";
+        return "Bass_Mult";
     
     case 3:
         return "Mid_Decay";
@@ -1012,7 +1012,7 @@ const char *Enover::parameter_unit(unsigned index) noexcept
         return "Hz";
     
     case 2:
-        return "s";
+        return "x";
     
     case 3:
         return "s";
@@ -1046,7 +1046,7 @@ const Enover::ParameterRange *Enover::parameter_range(unsigned index) noexcept
     }
     
     case 2: {
-        static const ParameterRange range = { 3.0, 1.0, 8.0 };
+        static const ParameterRange range = { 1.5, 0.5, 2.0 };
         return &range;
     }
     
@@ -1208,7 +1208,7 @@ float Enover::get_LowFreq_X() const noexcept
     return dsp.fVslider2;
 }
 
-float Enover::get_Low_Decay() const noexcept
+float Enover::get_Bass_Mult() const noexcept
 {
     mydsp &dsp = static_cast<mydsp &>(*fDsp);
     return dsp.fVslider3;
@@ -1251,7 +1251,7 @@ void Enover::set_LowFreq_X(float value) noexcept
     dsp.fVslider2 = value;
 }
 
-void Enover::set_Low_Decay(float value) noexcept
+void Enover::set_Bass_Mult(float value) noexcept
 {
     mydsp &dsp = static_cast<mydsp &>(*fDsp);
     dsp.fVslider3 = value;
