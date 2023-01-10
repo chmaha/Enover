@@ -1,7 +1,7 @@
 # Enover (RCVerb's big sister)
 A reverb suitable for classical music based on zita-rev1. Available as LV2 and CLAP by default (with optional VST3, VST2 and LADSPA).
 
-![image](https://user-images.githubusercontent.com/120390802/211276686-df5f40dc-0b60-4d50-8cc8-b9ae812e2215.png)
+![image](https://user-images.githubusercontent.com/120390802/211598868-1a1766a1-7309-4026-a0b2-bb152ee4f200.png)
 
 #### Controls
 
