@@ -27,9 +27,9 @@ with{
     f1 = freq_group(vslider("[1] LowFreq X [unit:Hz] [style:knob] [scale:log] [tooltip:
         Crossover frequency (Hz) separating low and middle frequencies]", 250, 50, 1000, 1));
 
-    t60dc = freq_group(vslider("[2] Low Decay [unit:s] [style:knob] [scale:log]
-    [style:knob] [tooltip: T60 = time (in seconds) to decay 60dB in low-frequency band]",
-    3, 1, 8, 0.1));
+    t60dc = freq_group(vslider("[2] Bass Mult [unit:x] [style:knob] [scale:log]
+    [style:knob] [tooltip: Bass Mult = Low Decay is equal to Mid Decay x Low Mult]",
+    1.5, 0.5, 2, 0.1)) * t60m;
 
     t60m = freq_group(vslider("[3] Mid Decay [unit:s] [style:knob] [scale:log] [tooltip:
         T60 = time (in seconds) to decay 60dB in middle band]",2, 1, 8, 0.1));
