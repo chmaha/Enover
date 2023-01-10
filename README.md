@@ -1,4 +1,4 @@
-# Enover ("ReaClassical Verb")
+# Enover (RCVerb's big sister)
 A reverb suitable for classical music based on zita-rev1. Available as LV2 and CLAP by default (with optional VST3, VST2 and LADSPA).
 
 ![image](https://user-images.githubusercontent.com/120390802/211276686-df5f40dc-0b60-4d50-8cc8-b9ae812e2215.png)
@@ -7,9 +7,11 @@ A reverb suitable for classical music based on zita-rev1. Available as LV2 and C
 
 Initial Delay = Delay in ms  
 LowFreq X = Low frequency Crossover point in Hz  
-Decay (RT60) = Decay time in seconds  
+Low Decay = Low frequency decay time in seconds  
+Mid Decay = Mid frequency decay time in seconds  
 HF Damping = High frequency damping in Hz  
-Wet/Dry Mix = Wetter to the left, drier to the right.  
+Wet/Dry Mix = Wetter to the left, drier to the right
+Level = Gain in dB
 
 Plugin defaults to 40ms delay, 250Hz crossover, 2 seconds, 3Khz damping and 50/50 wet/dry mix. This is ready to use as an insert. As a send (with dedicated reverb bus) simply move the wet/dry slider all the way to the left and adjust the channel fader to taste. 
 
