@@ -17,8 +17,8 @@ Plugin defaults to 40ms delay, 250Hz crossover, 2 seconds, 3Khz damping and 50/5
 
 ### Audio Demos
 
-[Mozart -- anechoic](https://github.com/chmaha/Enover/raw/main/Demo%20Audio/Mozart-anechoic.mp3)  
-[Mozart -- Wet](https://github.com/chmaha/Enover/raw/main/Demo%20Audio/Mozart-wet.mp3)
+[Mozart -- anechoic](https://github.com/chmaha/RCverb/raw/main/Demo%20Audio/Mozart-anechoic.mp3)  
+[Mozart -- Wet](https://github.com/chmaha/RCverb/raw/main/Demo%20Audio/Mozart-wet.mp3)
 
 ## Building LV2 and CLAP (On Linux or MacOS)
 
