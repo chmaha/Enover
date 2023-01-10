@@ -1,13 +1,13 @@
 # Enover (RCVerb's big sister)
 Another reverb with more controls suitable for classical music based on zita-rev1. Available as LV2 and CLAP by default (with optional VST3, VST2 and LADSPA).
 
-![image](https://user-images.githubusercontent.com/120390802/211598868-1a1766a1-7309-4026-a0b2-bb152ee4f200.png)
+![image](https://user-images.githubusercontent.com/120390802/211640183-2b1c9a4f-b47c-4f27-a86b-4eeed7146152.png)
 
 #### Controls
 
 Initial Delay = Delay in ms  
 LowFreq X = Low frequency Crossover point in Hz  
-Low Decay = Low frequency decay time in seconds  
+Bass Mult = Computes Low Decay as Bass Multiplier x Mid Decay   
 Mid Decay = Mid frequency decay time in seconds  
 HF Damping = High frequency damping in Hz  
 Wet/Dry Mix = Wetter to the left, drier to the right
